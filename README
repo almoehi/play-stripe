@@ -1,0 +1,2 @@
+# play-stripe
+scala library for stripe API using play.api.libs.ws

@@ -1,0 +1,25 @@
+# Ignore all dotfiles...
+.*
+# except for .gitignore
+!.gitignore
+
+credentials.properties
+
+# Ignore Play! working directory #
+bin
+./db
+eclipse
+lib
+log
+logs
+precompiled
+project/project
+project/target
+target
+tmp
+test-result
+server.pid
+*.iml
+*.eml
+atlassian-ide-plugin.xml
+
