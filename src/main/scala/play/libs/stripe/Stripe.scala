@@ -87,7 +87,7 @@ class StripeV112(key: Option[String] = None) extends StripeApi {
 
   implicit def readsCollection[T](implicit dataReads: Reads[T]): Reads[CollectionContainer[T]] = formats.v112.JsonFormats.collectionReads(dataReads)
 
-  val lines = scala.io.Source.fromFile("credentials.properties").getLines()
+  lazy val lines = scala.io.Source.fromFile("credentials.properties").getLines()
 
   def getProperty(name: String): Option[String] = lines.find(_.startsWith(s"$name=")).map(_.replace(s"$name=", ""))
 
