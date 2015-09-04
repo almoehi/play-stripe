@@ -63,7 +63,7 @@ object JsonFormats {
       (__ \ "balance_transaction").read[String] and
       (__ \ "charge").read[String] and
       (__ \ "metadata").readNullable[JsObject] and
-      (__ \ "reason").read[String].map(RefundReasons.withName(_)) and
+      (__ \ "reason").readNullable[String].map(_.map(RefundReasons.withName(_)).getOrElse(RefundReasons.Unknown)) and
       (__ \ "receipt_number").readNullable[String] and
       (__ \ "description").readNullable[String]
     )(Refund.apply _)

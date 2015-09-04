@@ -20,6 +20,7 @@ sealed case class Refund(id: String,
 object RefundReasons extends Enumeration {
   type Reason = Value
   val RequestedByCustomer = Value("requested_by_customer")
+  val Unknown = Value("unknown")
   val Duplicate = Value("duplicate")
   val Fraudulent = Value("fraudulent")
 }
